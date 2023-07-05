@@ -1,0 +1,12 @@
+jobs:
+  build:
+    name: Build Gitbook
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Build Gitbook
+        uses: tuliren/publish-gitbook@v1.0.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
