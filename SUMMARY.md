@@ -1,8 +1,9 @@
 # Table of contents
 
-* [Sampel Page 1](README.md)
+* [README](README.md)
+* [Github](https://github.com/Kirade)
+* [LinkedIn](https://www.linkedin.com/in/kirade/)
 
-## Group 1
+## About This Blog
 
-* [Page in group 1](group-1/page-in-group-1.md)
-* [Another Page in group 1](group-1/another-page-in-group-1.md)
+* [어떻게 만들어 졌나요?](about-this-blog/undefined.md)
