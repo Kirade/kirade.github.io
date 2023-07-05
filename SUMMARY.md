@@ -1,9 +1,13 @@
 # Table of contents
 
 * [README](README.md)
+
+## About Me
+
 * [Github](https://github.com/Kirade)
 * [LinkedIn](https://www.linkedin.com/in/kirade/)
 
 ## About This Blog
 
-* [어떻게 만들어 졌나요?](about-this-blog/undefined.md)
+* [기술 스택](about-this-blog/undefined.md)
+* [튜토리얼](about-this-blog/undefined-1.md)
