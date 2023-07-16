@@ -30,7 +30,7 @@ Space 의 생성이 잘 된것을 확인하였으면, 우측 상단의 메뉴를
 
 <div align="center" data-full-width="true">
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-07-16 at 2.58.32 PM.png" alt="" width="315"><figcaption><p>Synchronize with Git</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-07-16 at 2.58.32 PM.png" alt="" width="315"><figcaption></figcaption></figure>
 
 </div>
 
@@ -38,45 +38,36 @@ Space 의 생성이 잘 된것을 확인하였으면, 우측 상단의 메뉴를
 
 이후 이어지는 선택화면에서 Github 을 선택하고 `Connect with GitHub` 버튼을 눌러 연동을 진행합니다.
 
-<div>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-07-16 at 2.58.55 PM.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-07-16 at 2.58.55 PM.png" alt="" width="375"><figcaption><p>Provider</p></figcaption></figure>
 
- 
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-07-16 at 2.59.01 PM.png" alt="" width="375"><figcaption><p>Authentication</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-07-16 at 2.59.01 PM.png" alt=""><figcaption></figcaption></figure>
 
-</div>
+
 
 
 
 연동 이후에는 저장소를 선택하고 상세한 동기화 옵션을 선택할 수 있는 옵션이 표기됩니다.
 
-**Select Repository**
-
-저장소 선택 섹션에서 위에서 생성한 저장소의 정보를 토대로 계정과 저장소를 선택합니다.
-
-**Select Branch**
-
-저장소 선택 이후 아무런 액션을 취하지 않았기 때문에 옵션에 아무런 브랜치가 표기되지 않을 수 있습니다. 옵션 칸에 `master` 를 직접 입력해주면 master 브랜치를 동기화 시점에 생성해줍니다.
-
-**Monorepo, Commit message, Fork Pull-Request Preview**
-
-필수적인 옵션이 아니기 때문에 무시하고 지나갑니다. 옵션의 설명을보고 선택적으로 활용하시면 됩니다.
-
-**Choose priority**
-
-Github 과 Gitbook 사이의 동기화의 우선순위를 정하는 옵션입니다. Gitbook 을 통해서 소스코드를 업데이트하는 작업을 주로 할 예정이기 때문에 `Gitbook to Github` 옵션을 체크해줍니다.
+* Select Repository
+  * 저장소 선택 섹션에서 위에서 생성한 저장소의 정보를 토대로 계정과 저장소를 선택합니다.
+* Select Branch
+  * 저장소 선택 이후 아무런 액션을 취하지 않았기 때문에 옵션에 아무런 브랜치가 표기되지 않을 수 있습니다. 옵션 칸에 `master` 를 직접 입력해주면 master 브랜치를 동기화 시점에 생성해줍니다.
+* Monorepo, Commit message, Fork Pull-Request Preview
+  * 필수적인 옵션이 아니기 때문에 무시하고 지나갑니다. 옵션의 설명을보고 선택적으로 활용하시면 됩니다.
+* Choose priority
+  * Github 과 Gitbook 사이의 동기화의 우선순위를 정하는 옵션입니다. Gitbook 을 통해서 소스코드를 업데이트하는 작업을 주로 할 예정이기 때문에 `Gitbook to Github` 옵션을 체크해줍니다.
 
 
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-07-16 at 3.00.27 PM.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-07-16 at 3.00.27 PM.png" alt=""><figcaption></figcaption></figure>
 
 
 
 `Synchronize` 버튼을 눌러 동기화를 실행해주면 잠시 후 아래 이미지처럼 동기화 완료 메시지를 확인 할 수 있습니다.
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-07-16 at 3.18.08 PM.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-07-16 at 3.18.08 PM.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -101,6 +92,8 @@ Gitbook 의 형태를 올바르게 렌더링하기 위해서는 Gitbook 을 빌�
 저장소의 Settings - Actions - General 에 진입하여 하단의 Workflow permissions 에서 Read and write permissions 에 체크한 뒤 저장합니다.
 
 <figure><img src="../.gitbook/assets/Screen Shot 2023-07-16 at 3.37.38 PM.png" alt=""><figcaption></figcaption></figure>
+
+
 
 
 
