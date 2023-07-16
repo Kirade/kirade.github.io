@@ -10,7 +10,9 @@
 
 가장 첫 단계는 Gitbook 의 소스코드를 보관하고 Github Pages 를 호스팅 할 저장소를 만드는 일입니다. Github 에서 저장소를 하나 생성합니다. 저는 `kirade.github.io.sample` 라는 이름으로 만들었습니다.
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-07-16 at 2.38.15 PM.png" alt=""><figcaption><p>저장소 생성하기</p></figcaption></figure>
+
+
+<figure><img src="../.gitbook/assets/tutorial-1.png" alt=""><figcaption></figcaption></figure>
 
 
 
