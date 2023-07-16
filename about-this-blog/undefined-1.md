@@ -100,6 +100,12 @@ jobs:
 
 
 
+### 5. 부록
+
+**.nojekyll 파일**
+
+Github Pages 를 활용할때 Deploy from a branch 옵션을 활용하면 자동으로 Jekyll 을 활용해서 빌드를 진행하게 됩니다. 이 과정에서 빌드된 파일들 중 .(dot) 혹은 \_(underscore) 로 시작하는 폴더나 파일의 경우 올바르게 배포되지 않을 수 있습니다. Gitbook 은 .gitbook 이라는 디렉토리 안에서 assets 를 관리하고 있습니다. 따라서 Jekyll 빌드가 작동하게 되면 assets 에 저장된 이미지와 같은 파일들이 정상적으로 블로그에 표기되지 않을 수 있습니다. 따라서 `.nokeyll` 파일을 프로젝트 루트에 추가시켜서 Jekyll 빌더가 자동으로 작동하는것을 권장합니다. ([관련 문서](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators))
+
 ### 참고
 
 * [튜토리얼을 통해 생성한 저장소](https://github.com/Kirade/kirade.github.io.sample)
