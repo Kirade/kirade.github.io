@@ -7,6 +7,10 @@
 * [Github](https://github.com/Kirade)
 * [LinkedIn](https://www.linkedin.com/in/kirade/)
 
+## Thoughts
+
+* [파이썬 시니어 개발자](thoughts/undefined.md)
+
 ## About This Blog
 
 * [기술 스택](about-this-blog/undefined.md)
@@ -14,4 +18,4 @@
 
 ## PIECE OF KNOWLEDGE
 
-* [Java, Spring, Kotlin](piece-of-knowledge/java-spring-kotlin.md)
+* [Kotlin](piece-of-knowledge/kotlin.md)
