@@ -18,4 +18,8 @@
 
 ## PIECE OF KNOWLEDGE
 
-* [Kotlin](piece-of-knowledge/kotlin.md)
+* [Java](piece-of-knowledge/java/README.md)
+  * [Boxing](piece-of-knowledge/java/boxing.md)
+* [Kotlin](piece-of-knowledge/kotlin/README.md)
+  * [Arrays](piece-of-knowledge/kotlin/arrays.md)
+  * [키워드 정리](piece-of-knowledge/kotlin/undefined.md)
