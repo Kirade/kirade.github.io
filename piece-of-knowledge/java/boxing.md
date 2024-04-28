@@ -10,13 +10,13 @@ _Autoboxing_ 은 자바 컴파일러에 의해 원시 타입과 원시 타입에
 
 ### Autoboxing
 
-```
+```java
 Character ch = 'a';
 ```
 
 원시 타입인 'a' 가 대응하는 래퍼 클래스인 `Character` 로 자동 변환 되었다.
 
-```
+```java
 List<Integer> li = new ArrayList<>();
 for (int i = 1; i < 50; i += 2)
     li.add(i);
@@ -24,7 +24,7 @@ for (int i = 1; i < 50; i += 2)
 
 `List` 타입인 li 는 `Integer` 타입을 원소로 받지만 원시타입이 추가가 정상적으로 이뤄진다. 런타임에는 다음과 같은 형변환이 자동으로 이루어진다.
 
-```
+```java
 List<Integer> li = new ArrayList<>();
 for (int i = 1; i < 50; i += 2)
     li.add(Integer.valueOf(i));
@@ -35,7 +35,7 @@ Autoboxing 이 일어나는 조건은 다음과 같다.
 * 원시 타입에 대응하는 래퍼 클래스를 매개변수로 받는 함수에 원시 타입이 전달되는 경우
 * 대응하는 래퍼 클래스의 변수로 원시 타입이 할당되는 경우
 
-```
+```java
 public static int sumEven(List<Integer> li) {
     int sum = 0;
     for (Integer i: li)
@@ -47,7 +47,7 @@ public static int sumEven(List<Integer> li) {
 
 `Integer` 타입에 대해서 % 혹은 += 등의 연산은 지원하지 않음에도 불구하고 위의 코드가 작성하는 이유는 런타임에 아래와 같이 적절하게 형변환이 되기 때문이다.
 
-```
+```java
 public static int sumEven(List<Integer> li) {
     int sum = 0;
     for (Integer i : li)
@@ -64,7 +64,7 @@ public static int sumEven(List<Integer> li) {
 * 원시 타입을 매개변수로 받는 함수에 대응하는 래퍼 클래스가 전달되는 경우
 * 대응하는 원시 타입의 변수로 래퍼 클래스가 할당되는 경우
 
-```
+```java
 import java.util.ArrayList;
 import java.util.List;
 
@@ -93,7 +93,7 @@ public class Unboxing {
 
 위 코드의 실행 결과는 다음과 같다.
 
-```
+```java
 absolute value of -8 = 8
 pi = 3.1416
 ```
