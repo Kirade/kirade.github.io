@@ -46,7 +46,7 @@
 <ul>
   <li>There are no accounts, no login and no iCloud sync. Your shopping list is stored on your iPhone, and the developer does not receive it.</li>
   <li>The app shows banner ads from Google AdMob. Google's ad software collects some device data when ads load, starting after the first-run walkthrough.</li>
-  <li>The app does not ask for permission to track you across other companies' apps and websites.</li>
+  <li>Starting with version 1.3, after the first-run walkthrough the app shows a short explanation and then the iOS tracking permission prompt, once. If you do not allow tracking, the iOS advertising identifier is not available to the ad software, and no feature is blocked. Earlier versions do not show this prompt.</li>
   <li>Users in the EEA, the United Kingdom and Switzerland see a Google consent form first, and can change their choice at any time in Settings &rarr; Privacy Settings.</li>
   <li>Deleting the app deletes your list.</li>
 </ul>
@@ -75,12 +75,13 @@
   <li>Crash logs, performance data and other diagnostic data, to diagnose problems and improve the SDK (performance data may also be used for displaying ads)</li>
 </ul>
 <p>Google's consent form software (User Messaging Platform) collects approximate location, performance data and product interactions to run the consent form.</p>
-<p>QuickCart+ does not show the iOS tracking permission prompt (App Tracking Transparency). Because it does not ask for that permission, the iOS advertising identifier is not available to the ad software.</p>
+<p><strong>Tracking permission (version 1.3 and later).</strong> When ads start, after the first-run walkthrough, Google's User Messaging Platform shows users in all regions a short explanation and then the iOS tracking permission prompt (App Tracking Transparency), once. If you allow tracking, Google's ad software can use the iOS advertising identifier (IDFA) to show personalised ads. If you do not allow it, the ad software cannot use it. QuickCart+ does not block any feature based on your choice, and you can change it in iPhone Settings &rarr; Privacy &amp; Security &rarr; Tracking. Versions before 1.3 do not show this prompt, and in those versions the iOS advertising identifier is not available to the ad software.</p>
 <p>Google's use of this information is described in <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use our services</a> and in <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
 <h3>Ad choices</h3>
 <ul>
   <li>Users in places where the law requires it, such as the EEA, the United Kingdom and Switzerland, see a Google consent form before ads start. If you do not consent to personalised ads, you may see ads that are not personalised, or limited ads.</li>
-  <li>To change your choice: in QuickCart+, tap the gear button to open Settings, then <strong>Privacy Settings</strong>. This item is shown only to users who need it.</li>
+  <li>Starting with version 1.3, users in all regions see a short explanation and then the iOS tracking permission prompt, once, when ads start (see above). If you do not allow tracking, you may see ads that are not personalised.</li>
+  <li>To change your choice: in QuickCart+, tap the gear button to open Settings, then <strong>Privacy Settings</strong> (shown only to users who need it); on iPhone, Settings &rarr; Privacy &amp; Security &rarr; Tracking (version 1.3 and later).</li>
   <li>QuickCart+ does not block any feature based on your ad choices. Ads are part of the main screen and are not an optional feature, so there is no setting that removes them.</li>
 </ul>
 
@@ -110,11 +111,11 @@
 <table>
   <tr><th>Recipient and contact</th><td>Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. <a href="https://support.google.com/policies?p=privpol_privts">Contact form</a>, <a href="mailto:googlekrsupport@google.com">googlekrsupport@google.com</a></td></tr>
   <tr><th>Country</th><td>United States</td></tr>
-  <tr><th>Items</th><td>Device ID, IP address, approximate location, advertising data, product interactions, crash logs, performance data, other diagnostic data</td></tr>
+  <tr><th>Items</th><td>Device ID (the iOS advertising identifier only if you allow tracking, version 1.3 and later), IP address, approximate location, advertising data, product interactions, crash logs, performance data, other diagnostic data</td></tr>
   <tr><th>Purpose</th><td>To show ads, and for ad analytics and diagnostics</td></tr>
   <tr><th>When and how</th><td>When the app loads or shows an ad, over the network, directly from your iPhone</td></tr>
   <tr><th>Retention</th><td>According to Google's policies (see links in section 3)</td></tr>
-  <tr><th>How to refuse, and effect</th><td>Change your choice in Settings &rarr; Privacy Settings (shown only to users who need it). You may then see ads that are not personalised, or limited ads. Ads are part of the main screen and are not an optional feature, so there is no setting that removes them.</td></tr>
+  <tr><th>How to refuse, and effect</th><td>Do not allow tracking (version 1.3 and later), or change your choice in Settings &rarr; Privacy Settings (shown only to users who need it) or in iPhone Settings &rarr; Privacy &amp; Security &rarr; Tracking. You may then see ads that are not personalised, or limited ads. Ads are part of the main screen and are not an optional feature, so there is no setting that removes them.</td></tr>
 </table>
 </div>
 <p>QuickCart+ shares user data only with the provider named in this policy: Google (ads). Under its published terms and policies, Google protects user data at a level the same as or equal to what this policy describes.</p>
