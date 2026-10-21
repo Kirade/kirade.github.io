@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Kirade Mail Setup Privacy Policy</title>
+<style>
+  :root { --bg: #ffffff; --fg: #1d1d1f; --muted: #5b5b61; --line: #d8d8dd; --accent: #0a5ed7; --note: #f4f5f7; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111113; --fg: #ececf0; --muted: #a0a0a8; --line: #34343a; --accent: #7db3ff; --note: #1b1b1f; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  main { max-width: 42rem; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { font-size: 1.8rem; line-height: 1.25; margin: 0 0 4px; }
+  h2 { font-size: 1.25rem; line-height: 1.3; margin: 2.2rem 0 0.4rem; padding-top: 0.4rem; border-top: 1px solid var(--line); }
+  h3 { font-size: 1.02rem; margin: 1.4rem 0 0.2rem; }
+  p, ul { margin: 0.6rem 0; }
+  ul { padding-left: 1.3rem; }
+  li { margin: 0.25rem 0; }
+  a { color: var(--accent); }
+  .meta { color: var(--muted); margin: 0; font-size: 0.95rem; }
+  .lang { margin: 0 0 1rem; font-size: 0.95rem; }
+  .note { background: var(--note); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; margin: 1rem 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<main>
+<p class="lang"><a href="#ko" hreflang="ko" lang="ko">한국어</a> | English</p>
+
+<h1>Kirade Mail Setup Privacy Policy</h1>
+<p class="meta">Effective: October 21, 2026</p>
+
+<p>Kirade Mail Setup is a personal tool used by one person, its owner, to create labels and filters in the owner's own Gmail account for the owner's app contact addresses (addresses using a <code>+</code> alias). It is not offered to the public, and it has no other users.</p>
+
+<div class="note">
+<strong>In short</strong>
+<ul>
+  <li>The tool asks for two Google permissions: one to view and create labels, one to view and create filters.</li>
+  <li>It does not read, send or delete email.</li>
+  <li>The only filters it creates apply one label to mail sent to a specific address. It does not create filters that delete, skip the inbox or forward.</li>
+  <li>The data is not sold, not shared with third parties and not used for advertising.</li>
+  <li>There is no server run for this tool.</li>
+</ul>
+</div>
+
+<h2>1. Who is responsible</h2>
+<p>The operator is <strong>Kirade</strong> (an individual developer), who is also the only user. Questions about privacy: <a href="mailto:kirade.apps+reports@gmail.com">kirade.apps+reports@gmail.com</a>.</p>
+
+<h2>2. What Google data the tool accesses</h2>
+<p>The tool uses the Gmail API and requests two scopes:</p>
+<ul>
+  <li><code>https://www.googleapis.com/auth/gmail.labels</code> (view and create labels)</li>
+  <li><code>https://www.googleapis.com/auth/gmail.settings.basic</code> (view and create filters)</li>
+</ul>
+<p>With these scopes, the tool lists the owner's existing labels and filters and creates new labels and filters. It does not request any scope that allows reading email content or sending email. In principle, the filter permission could also be used to create filters that delete or forward email, but this tool only creates filters that apply a single label to mail sent to a specific address, and it does not create filters that delete, skip the inbox or forward. It does not modify or delete existing labels or filters.</p>
+
+<h2>3. How the data is used</h2>
+<p>The tool runs on the owner's computer, only to set up labels and filters for the owner's own contact addresses. The owner may have AI assistant software, such as Anthropic's Claude, run the tool on the owner's behalf.</p>
+
+<h2>4. Storage of credentials</h2>
+<p>The OAuth credentials (client ID, client secret and refresh token) are kept in the owner's personal secrets store (Infisical). No server is operated for this tool.</p>
+
+<h2>5. Sharing</h2>
+<p>The data is not sold and is not shared with third parties. It is not used for advertising.</p>
+
+<h2>6. Google API Services User Data Policy</h2>
+<p>Use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+<h2>7. Revoking access</h2>
+<p>Access can be revoked at any time at <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a>.</p>
+
+<h2>8. Contact and changes</h2>
+<p>Contact: <a href="mailto:kirade.apps+reports@gmail.com">kirade.apps+reports@gmail.com</a>. If this policy changes, the new version is posted here with a new effective date.</p>
+<p class="meta">Effective: October 21, 2026</p>
+
+<h2 id="ko" lang="ko">한국어 (Korean)</h2>
+<div lang="ko">
+<h1>Kirade Mail Setup 개인정보처리방침</h1>
+<p class="meta">시행일: 2026년 10월 21일</p>
+
+<p>Kirade Mail Setup은 소유자 한 사람이 자신의 앱 문의 주소(<code>+</code> 별칭 주소)용 라벨과 필터를 소유자 본인의 Gmail 계정에 만들려고 쓰는 개인 도구입니다. 일반에 제공하지 않으며 다른 사용자는 없습니다.</p>
+
+<h3>1. 책임자</h3>
+<p>운영자는 개인 개발자 <strong>Kirade</strong>이며, 유일한 사용자이기도 합니다. 문의: <a href="mailto:kirade.apps+reports@gmail.com">kirade.apps+reports@gmail.com</a></p>
+
+<h3>2. 접근하는 Google 데이터</h3>
+<p>이 도구는 Gmail API를 사용하며 권한 범위 두 개를 요청합니다.</p>
+<ul>
+  <li><code>https://www.googleapis.com/auth/gmail.labels</code> (라벨 보기·만들기)</li>
+  <li><code>https://www.googleapis.com/auth/gmail.settings.basic</code> (필터 보기·만들기)</li>
+</ul>
+<p>이 범위로 소유자의 기존 라벨과 필터 목록을 조회하고 새 라벨과 필터를 만듭니다. 메일 본문을 읽거나 메일을 보내는 범위는 요청하지 않습니다. 필터 권한으로는 원칙적으로 메일을 지우거나 전달하는 필터도 만들 수 있지만, 이 도구는 특정 받는사람 주소로 온 메일에 라벨 하나를 붙이는 필터만 만들고, 메일을 지우거나 받은편지함을 건너뛰거나 전달하는 필터는 만들지 않습니다. 기존 라벨과 필터를 고치거나 지우지도 않습니다.</p>
+
+<h3>3. 데이터 이용</h3>
+<p>이 도구는 소유자의 컴퓨터에서 실행되며, 소유자 자신의 문의 주소용 라벨과 필터를 설정하는 데에만 씁니다. 소유자는 대신 일을 맡기는 AI 도우미 소프트웨어(예: Anthropic의 Claude)로 이 도구를 실행하게 할 수 있습니다.</p>
+
+<h3>4. 자격 증명 보관</h3>
+<p>OAuth 자격 증명(클라이언트 ID, 클라이언트 시크릿, refresh token)은 소유자의 개인 시크릿 저장소(Infisical)에 보관합니다. 이 도구를 위해 따로 운영하는 서버는 없습니다.</p>
+
+<h3>5. 공유</h3>
+<p>데이터를 판매하거나 제3자와 공유하지 않으며, 광고에 쓰지 않습니다.</p>
+
+<h3>6. Google API 서비스 사용자 데이터 정책</h3>
+<p>Use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+<h3>7. 접근 철회</h3>
+<p><a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a>에서 언제든지 접근 권한을 철회할 수 있습니다.</p>
+
+<h3>8. 문의 및 변경</h3>
+<p>문의: <a href="mailto:kirade.apps+reports@gmail.com">kirade.apps+reports@gmail.com</a>. 방침이 바뀌면 새 시행일과 함께 이 페이지에 게시합니다.</p>
+<p class="meta">시행일: 2026년 10월 21일</p>
+</div>
+</main>
+</body>
+</html>
