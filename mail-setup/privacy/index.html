@@ -57,7 +57,7 @@
   <li><code>https://www.googleapis.com/auth/gmail.labels</code> (view and create labels)</li>
   <li><code>https://www.googleapis.com/auth/gmail.settings.basic</code> (view and create filters)</li>
 </ul>
-<p>With these scopes, the tool lists the owner's existing labels and filters and creates new labels and filters. It does not request any scope that allows reading email content, sending email or deleting email. It does not modify or delete existing labels or filters.</p>
+<p>With these scopes, the tool lists the owner's existing labels and filters and creates new labels and filters. It does not request any scope that allows reading email content or sending email. In principle, the filter permission could also be used to create filters that delete or forward email, but this tool only creates filters that apply a single label to mail sent to a specific address, and it does not create filters that delete, skip the inbox or forward. It does not modify or delete existing labels or filters.</p>
 
 <h2>3. How the data is used</h2>
 <p>The tool runs on the owner's computer, only to set up labels and filters for the owner's own contact addresses. The owner may have AI assistant software, such as Anthropic's Claude, run the tool on the owner's behalf.</p>
@@ -94,7 +94,7 @@
   <li><code>https://www.googleapis.com/auth/gmail.labels</code> (라벨 보기·만들기)</li>
   <li><code>https://www.googleapis.com/auth/gmail.settings.basic</code> (필터 보기·만들기)</li>
 </ul>
-<p>이 범위로 소유자의 기존 라벨과 필터 목록을 조회하고 새 라벨과 필터를 만듭니다. 메일 본문을 읽거나 메일을 보내거나 지우는 범위는 요청하지 않습니다. 만드는 필터는 특정 받는사람 주소로 온 메일에 라벨 하나를 붙이는 것뿐이며, 메일을 지우거나 받은편지함을 건너뛰거나 전달하는 필터는 만들지 않습니다. 기존 라벨과 필터를 고치거나 지우지도 않습니다.</p>
+<p>이 범위로 소유자의 기존 라벨과 필터 목록을 조회하고 새 라벨과 필터를 만듭니다. 메일 본문을 읽거나 메일을 보내는 범위는 요청하지 않습니다. 필터 권한으로는 원칙적으로 메일을 지우거나 전달하는 필터도 만들 수 있지만, 이 도구는 특정 받는사람 주소로 온 메일에 라벨 하나를 붙이는 필터만 만들고, 메일을 지우거나 받은편지함을 건너뛰거나 전달하는 필터는 만들지 않습니다. 기존 라벨과 필터를 고치거나 지우지도 않습니다.</p>
 
 <h3>3. 데이터 이용</h3>
 <p>이 도구는 소유자의 컴퓨터에서 실행되며, 소유자 자신의 문의 주소용 라벨과 필터를 설정하는 데에만 씁니다. 소유자는 대신 일을 맡기는 AI 도우미 소프트웨어(예: Anthropic의 Claude)로 이 도구를 실행하게 할 수 있습니다.</p>
