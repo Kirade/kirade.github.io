@@ -37,7 +37,7 @@
 <p class="lang"><a href="https://kirade.github.io/quickcart/privacy/ko/" hreflang="ko" lang="ko">한국어</a> | English</p>
 
 <h1>QuickCart+ Privacy Policy</h1>
-<p class="meta">Effective: October 21, 2026</p>
+<p class="meta">Effective: October 22, 2026</p>
 
 <p>QuickCart+ is an iPhone app for writing down shopping items quickly, from Lock Screen and Home Screen widgets. This page explains what the app does with your information.</p>
 
@@ -48,6 +48,8 @@
   <li>The app shows banner ads from Google AdMob. Google's ad software collects some device data when ads load, starting after the first-run walkthrough.</li>
   <li>Starting with version 1.3, after the first-run walkthrough the app shows a short explanation and then the iOS tracking permission prompt, once. If you do not allow tracking, the iOS advertising identifier is not available to the ad software, and no feature is blocked. Earlier versions do not show this prompt.</li>
   <li>Users in the EEA, the United Kingdom and Switzerland see a Google consent form first, and can change their choice at any time in Settings &rarr; Privacy Settings.</li>
+  <li>Starting with version 1.4, QuickCart+ sends anonymous usage statistics to PostHog to learn how features are used. It never sends your shopping list or anything you type, and you can turn this off in Settings.</li>
+  <li>In the EEA, the United Kingdom and Switzerland, usage statistics are off until you turn them on in Settings.</li>
   <li>Deleting the app deletes your list.</li>
 </ul>
 </div>
@@ -62,7 +64,8 @@
   <li>Your shopping list items: the text you typed, when you added each item and when you checked it</li>
   <li>Whether you have finished the first-run walkthrough</li>
 </ul>
-<p>QuickCart+ has no accounts, no server of its own and no cloud sync. The developer does not receive this data. The widgets read the same data on your iPhone to show your items. Deleting the app deletes this data. If you back up your iPhone (to iCloud or a computer), the backup can include this data, as with most apps.</p>
+<p>Starting with version 1.4, the app also stores on your iPhone whether anonymous usage statistics are on and, if they have been on, the random identifier used for them and any usage events not yet sent (see section 4).</p>
+<p>QuickCart+ has no accounts, no server of its own and no cloud sync. The developer does not receive your shopping list, and the app does not give it to the ad software or to the usage statistics service. The widgets read the same data on your iPhone to show your items. Deleting the app deletes all of this data. If you back up your iPhone (to iCloud or a computer), the backup can include this data, as with most apps.</p>
 
 <h2>3. Ads (Google AdMob)</h2>
 <p>QuickCart+ shows a banner ad from <strong>Google AdMob</strong> at the bottom of the main screen. Google's ad software (Google Mobile Ads SDK, together with Google's User Messaging Platform SDK for the consent form) starts after you finish the first-run walkthrough, or at launch if you already have. Ads load directly from your iPhone to Google. They do not pass through any server of the developer, and the developer does not receive this data. The app does not give the ad software your shopping list.</p>
@@ -85,28 +88,50 @@
   <li>QuickCart+ does not block any feature based on your ad choices. Ads are part of the main screen and are not an optional feature, so there is no setting that removes them.</li>
 </ul>
 
-<h2>4. Users in the EEA, the United Kingdom and Switzerland</h2>
+<h2>4. Usage statistics (PostHog, version 1.4 and later)</h2>
+<p>Starting with version 1.4, to understand how features are used and to improve the app, QuickCart+ sends usage events to the analytics service of PostHog, Inc. Earlier versions do not send usage statistics.</p>
+<p><strong>What is sent</strong></p>
+<ul>
+  <li>What happened in the app and its kind: the app was opened, and where it was opened from (such as the app icon, a Lock Screen or Home Screen widget, Siri, Shortcuts or the Action button, a control in Control Center or on the Lock Screen, or a QuickCart+ link); an item was added, and where (in the app, or with Siri or Shortcuts without opening the app), and for items added in the app, how many you had added in a row; an item was checked; Clear Done was used, with a range for how many items it cleared (1, 2&ndash;5, 6&ndash;10, or 11 or more); the widget tip card was shown, tapped or closed; which kinds of QuickCart+ widgets you have placed (Lock Screen, Home Screen, or both); the app asked iOS to show the App Store rating prompt (the app does not know whether it was shown or what you chose); Send Feedback was tapped</li>
+  <li>The time of each event, app name and version, build type (App Store, TestFlight or development), iOS version, device model and type, language, time zone, screen size, network type (Wi-Fi or cellular)</li>
+  <li>A random identifier created on your iPhone for this installation of the app, and a random identifier for each session of use. The installation identifier is deleted with the app, and a new one is created if you reinstall.</li>
+</ul>
+<p><strong>What is not sent</strong></p>
+<ul>
+  <li>Your shopping list items or anything you type, the items shown in widgets, the content of feedback mail, your name, your email address, the advertising identifier (IDFA), device identifiers such as the identifier for vendors (IDFV), or location</li>
+  <li>The app does not create a user profile and does not link usage events to anything that identifies you. PostHog receives your IP address while the data is transmitted, but the project is set not to derive location from it and not to store it.</li>
+</ul>
+<p><strong>When it is sent.</strong> Nothing is sent before you finish the first-run walkthrough. Events from that time are kept in your iPhone's memory. If usage statistics are on, they are sent after the walkthrough with the time they happened; if not, they are discarded. After that, events are sent in batches while you use the app.</p>
+<p><strong>How to turn it off or on.</strong> In QuickCart+, tap the gear button to open Settings, then turn <strong>Send Anonymous Usage Statistics</strong> off or on. For users whose App Store country is in the EEA, the United Kingdom or Switzerland, the switch is off by default and nothing is sent until you turn it on. The app does not show a pop-up asking about this. Users elsewhere have it on by default. Until the app can tell your App Store country, it sends nothing. Usage after you turn the switch off is not sent. Events that were already waiting on your iPhone at that moment may still be sent while the app stays open, or later if you turn the switch back on. The app works the same whether the switch is on or off.</p>
+<p><strong>Where it is stored.</strong> PostHog stores the data in the United States (PostHog US Cloud).</p>
+<p><strong>Retention.</strong> Events are kept by PostHog for 1 year and are no longer queryable after that. The developer uses them only to understand how the app is used and to improve it. How PostHog handles data is described in <a href="https://posthog.com/privacy">PostHog's Privacy Policy</a>.</p>
+
+<h2>5. Users in the EEA, the United Kingdom and Switzerland</h2>
 <ul>
   <li>Personalised ads are based on the consent you give in the Google consent form. You can withdraw or change that consent at any time in Settings &rarr; <strong>Privacy Settings</strong>.</li>
-  <li>The developer does not receive or keep your personal information. Your list is only on your iPhone, so you can view, change and delete it in the app, or by deleting the app.</li>
-  <li>Google processes ad data under Google's own policies. To use your rights with Google, see <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and the page linked in section 3.</li>
+  <li>Anonymous usage statistics (section 4) are off by default for you. They are sent only if you turn on <strong>Send Anonymous Usage Statistics</strong> in Settings, and you can turn them off again at any time.</li>
+  <li>The developer does not receive or keep your shopping list. It is only on your iPhone, so you can view, change and delete it in the app, or by deleting the app.</li>
+  <li>Google and PostHog process data under their own policies. To use your rights with them, see <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>, <a href="https://posthog.com/privacy">PostHog's Privacy Policy</a> and the pages linked in sections 3 and 4.</li>
 </ul>
 
-<h2>5. Deleting data and how long it is kept</h2>
+<h2>6. Deleting data and how long it is kept</h2>
 <ul>
   <li><strong>Delete an item:</strong> swipe it in the list. Your other items stay.</li>
   <li><strong>Clear Done:</strong> deletes all items you have marked as purchased. It deletes them at once and cannot be undone.</li>
-  <li><strong>Delete the app:</strong> deletes your list and the other data in section 2 from your iPhone.</li>
+  <li><strong>Delete the app:</strong> deletes your list and the other data in section 2 from your iPhone, including the random identifier used for usage statistics.</li>
+  <li><strong>Stop usage statistics:</strong> turn off <strong>Send Anonymous Usage Statistics</strong> in Settings (section 4).</li>
 </ul>
 <p><strong>How long data is kept:</strong></p>
 <ul>
   <li>Data on your iPhone stays until you delete it or delete the app.</li>
-  <li>The developer holds no user data, so there is nothing on the developer's side to delete.</li>
+  <li>The developer does not hold your shopping list, so there is none of it on the developer's side to delete.</li>
+  <li>Usage events already sent are kept by PostHog for 1 year and are no longer queryable after that. Because they are tied only to a random identifier, the developer cannot tell which events are yours and cannot delete them one by one. To stop sending more, turn off usage statistics or delete the app.</li>
   <li>Data sent to Google is kept as described in Google's policies (see section 3).</li>
 </ul>
 
-<h2>6. Transfers of personal information outside Korea</h2>
-<p>Below are the items listed in Article 28-8(2) of Korea's Personal Information Protection Act for the one company that receives information from the app.</p>
+<h2>7. Transfers of personal information outside Korea</h2>
+<p>Below are the items listed in Article 28-8(2) of Korea's Personal Information Protection Act for the two companies that receive information from the app.</p>
+<h3>Google (ads)</h3>
 <div class="tablewrap">
 <table>
   <tr><th>Recipient and contact</th><td>Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. <a href="https://support.google.com/policies?p=privpol_privts">Contact form</a>, <a href="mailto:googlekrsupport@google.com">googlekrsupport@google.com</a></td></tr>
@@ -118,21 +143,34 @@
   <tr><th>How to refuse, and effect</th><td>Do not allow tracking (version 1.3 and later), or change your choice in Settings &rarr; Privacy Settings (shown only to users who need it) or in iPhone Settings &rarr; Privacy &amp; Security &rarr; Tracking. You may then see ads that are not personalised, or limited ads. Ads are part of the main screen and are not an optional feature, so there is no setting that removes them.</td></tr>
 </table>
 </div>
-<p>QuickCart+ shares user data only with the provider named in this policy: Google (ads). Under its published terms and policies, Google protects user data at a level the same as or equal to what this policy describes.</p>
+<h3>PostHog (usage statistics)</h3>
+<div class="tablewrap">
+<table>
+  <tr><th>Recipient and contact</th><td>PostHog, Inc., 2261 Market Street #4008, San Francisco, CA 94114, USA. <a href="mailto:privacy@posthog.com">privacy@posthog.com</a></td></tr>
+  <tr><th>Country</th><td>United States</td></tr>
+  <tr><th>Items</th><td>Usage events and their times (what happened in the app and its kind, as listed in section 4), app, device and iOS information, random installation and session identifiers</td></tr>
+  <tr><th>Purpose</th><td>Usage statistics and app improvement</td></tr>
+  <tr><th>When and how</th><td>After the first-run walkthrough, while you use the app (including adding items with Siri or Shortcuts), when an event occurs, over the network, directly from your iPhone (sent in batches)</td></tr>
+  <tr><th>Retention</th><td>1 year at PostHog</td></tr>
+  <tr><th>How to refuse, and effect</th><td>Turn off <strong>Send Anonymous Usage Statistics</strong> in Settings. Usage after that is not sent. In the EEA, the United Kingdom and Switzerland it is off until you turn it on. No app feature is blocked.</td></tr>
+</table>
+</div>
+<p>QuickCart+ shares user data only with the providers named in this policy: Google (ads) and PostHog (usage statistics). Under its published terms and policies, Google protects user data at a level the same as or equal to what this policy describes.</p>
 
-<h2>7. Your rights</h2>
-<p>You can view, edit and delete the data on your iPhone in the app at any time. The developer does not hold your data and does not know who you are, so there is almost nothing to look up. If you still have a request or a complaint, write to <a href="mailto:kirade.apps+quickcart@gmail.com">kirade.apps+quickcart@gmail.com</a>. For data held by Google, you can also contact Google using the links above.</p>
-<p>You can change your ad choices at any time (section 3).</p>
+<h2>8. Your rights</h2>
+<p>You can view, edit and delete the data on your iPhone in the app at any time. The developer does not hold your shopping list. It receives anonymous usage statistics (section 4), but they are tied only to a random identifier, so the developer does not know who you are and cannot find which events are yours. There is almost nothing to look up. If you still have a request or a complaint, write to <a href="mailto:kirade.apps+quickcart@gmail.com">kirade.apps+quickcart@gmail.com</a>. For data held by Google or PostHog, you can also contact them using the links above.</p>
+<p>You can change your ad choices and your usage statistics choice at any time (sections 3 and 4).</p>
 
-<h2>8. TestFlight</h2>
+<h2>9. TestFlight</h2>
 <p>If you install a test build through Apple's TestFlight, the developer can see in App Store Connect the email address and name you were invited with, your sessions and crashes (depending on your iOS analytics settings), and any feedback you send, including screenshots. Apple provides this data. QuickCart+ does not collect it itself.</p>
+<p>Starting with version 1.4, test builds also send usage statistics as described in section 4. They are marked as test builds and counted separately from the App Store version.</p>
 
-<h2>9. Children</h2>
+<h2>10. Children</h2>
 <p>QuickCart+ is not directed to children under 14 (under 13 in the United States). If you believe a child has used the app, contact <a href="mailto:kirade.apps+quickcart@gmail.com">kirade.apps+quickcart@gmail.com</a>.</p>
 
-<h2>10. Changes</h2>
+<h2>11. Changes</h2>
 <p>If this policy changes, the new version is posted here with a new effective date.</p>
-<p class="meta">Effective: October 21, 2026</p>
+<p class="meta">Effective: October 22, 2026</p>
 </main>
 </body>
 </html>
