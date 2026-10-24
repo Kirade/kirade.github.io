@@ -45,7 +45,7 @@
 <strong>In short</strong>
 <ul>
   <li>There are no accounts and no login. Your habits (their names and any memo), your daily entries and your scores are stored on your iPhone only. The developer does not receive them. Usage statistics and feedback mail never contain the names or memos of your habits or anything you type; statistics only say what kind of action happened, for example that a day was marked Rest (section 4).</li>
-  <li>Steadily shows no ads, has no in-app purchases and does not track you across other companies&rsquo; apps and websites.</li>
+  <li>Steadily shows no ads. It has one optional in-app purchase, Steadily Plus, and Apple processes the payment; the developer does not receive your payment details. Steadily does not track you across other companies&rsquo; apps and websites.</li>
   <li>Steadily sends anonymous usage statistics to PostHog to learn how features are used. It never sends the names of your habits or anything you type, and you can turn this off in Settings. In the EEA, the United Kingdom and Switzerland it is off until you turn it on.</li>
   <li>Deleting the app deletes your habits and entries.</li>
 </ul>
@@ -67,19 +67,27 @@
 <p>From time to time Steadily may ask you for an App Store rating through Apple&rsquo;s standard rating prompt, at most once per app version. Apple handles your answer under its own policies, and the developer does not receive it.</p>
 
 <h2>3. Ads, purchases and tracking</h2>
-<p>Steadily shows no ads and has no in-app purchases. It does not use the iOS advertising identifier (IDFA), does not show the iOS tracking permission prompt, and does not link your data with data from other companies&rsquo; apps and websites for advertising or share it with data brokers.</p>
+<p>Steadily shows no ads.</p>
+<p><strong>Steadily Plus (in-app purchase).</strong> Steadily is free to use with up to 3 active habits. Steadily Plus is a one-time purchase that removes that limit. It is not a subscription and does not renew. Habits and entries you have already made are never locked. The price is set by Apple for your App Store country and is shown by Apple before you buy.</p>
+<ul>
+  <li>Apple processes the payment. The developer does not receive your payment details or information about your Apple account.</li>
+  <li>Whether you have bought Plus is checked on your iPhone from Apple&rsquo;s purchase records (StoreKit). The developer has no server and does not keep a list of buyers.</li>
+  <li>To get Plus again after reinstalling the app or on another iPhone that uses the same Apple Account, use <strong>Restore Purchases</strong> in Settings. Refunds are handled by Apple (<a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>); the developer cannot issue them.</li>
+</ul>
+<p><strong>Tracking.</strong> Steadily does not use the iOS advertising identifier (IDFA), does not show the iOS tracking permission prompt, and does not link your data with data from other companies&rsquo; apps and websites for advertising or share it with data brokers.</p>
 
 <h2>4. Usage statistics (PostHog)</h2>
 <p>To understand how features are used and to improve the app, Steadily sends usage events to the analytics service of PostHog, Inc.</p>
 <p><strong>What is sent</strong></p>
 <ul>
   <li>What happened in the app and its kind: the app was opened; a habit was created, archived or deleted (with a range for how many active habits you have afterwards: 0, 1, 2, 3, 4&ndash;5 or 6 or more); a day was recorded (whether it is Done, Swap or Rest, whether the day is today or an earlier day, whether it was recorded in the app or in a widget, and a range for how many days had passed since the previous entry for that habit: first entry, 1, 2, 3&ndash;6 or 7 or more); an entry was cleared (whether the day is today or an earlier day, and whether it was cleared in the app or in a widget); and, at most once a day, how many small and how many medium Steadily widgets are on your Home Screen (0, 1 or 2 or more of each). When you record a day in a widget, the app sends that event the next time it opens.</li>
+  <li>Purchases, by kind only: the Steadily Plus payment screen was opened (and where from: adding a habit, restoring a habit from the archive, or Settings); Plus was purchased (and from which payment screen); purchases were restored.</li>
   <li>When each event happened, the app name and version, build type (App Store, TestFlight or development), iOS version, device model and type, language, time zone, screen size, network type (Wi-Fi or cellular)</li>
   <li>A random identifier created when the app is installed. It is deleted with the app and replaced when you reinstall.</li>
 </ul>
 <p><strong>What is not sent</strong></p>
 <ul>
-  <li>The names or memos of your habits or anything else you type, any identifier of a habit, which earlier day you recorded or changed (only whether it was today or an earlier day), your consistency scores, your name, your email address, the advertising identifier (IDFA), device identifiers such as the identifier for vendors (IDFV), or location</li>
+  <li>The names or memos of your habits or anything else you type, any identifier of a habit, which earlier day you recorded or changed (only whether it was today or an earlier day), your consistency scores, your name, your email address, the advertising identifier (IDFA), device identifiers such as the identifier for vendors (IDFV), location, and, for purchases, the price, currency, product ID, transaction ID or any information about your Apple Account</li>
   <li>The app does not create a user profile and does not link usage events to anything that identifies you. PostHog receives your IP address while the data is transmitted, but the project is set not to derive location from it and not to store it.</li>
 </ul>
 <p><strong>Where it is stored.</strong> PostHog stores the data in the United States.</p>
@@ -117,7 +125,7 @@
 <table>
   <tr><th>Recipient and contact</th><td>PostHog, Inc., 2261 Market Street #4008, San Francisco, CA 94114, USA. <a href="mailto:privacy@posthog.com">privacy@posthog.com</a></td></tr>
   <tr><th>Country</th><td>United States</td></tr>
-  <tr><th>Items</th><td>Usage events (what happened in the app and its kind, as listed in section 4), app, device and iOS information, a random installation identifier</td></tr>
+  <tr><th>Items</th><td>Usage events (what happened in the app and its kind, as listed in section 4, including whether the Plus payment screen was opened, Plus was purchased or purchases were restored, without price or payment information), app, device and iOS information, a random installation identifier</td></tr>
   <tr><th>Purpose</th><td>Usage statistics and app improvement</td></tr>
   <tr><th>When and how</th><td>While you use the app, when an event occurs, over the network, directly from your iPhone (sent in batches)</td></tr>
   <tr><th>Retention</th><td>1 year at PostHog</td></tr>
