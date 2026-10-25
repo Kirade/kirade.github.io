@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Steadily Support</title>
+<style>
+  :root { --bg: #ffffff; --fg: #1d1d1f; --muted: #5b5b61; --line: #d8d8dd; --accent: #0a5ed7; --note: #f4f5f7; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111113; --fg: #ececf0; --muted: #a0a0a8; --line: #34343a; --accent: #7db3ff; --note: #1b1b1f; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  main { max-width: 42rem; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { font-size: 1.8rem; line-height: 1.25; margin: 0 0 4px; }
+  h2 { font-size: 1.25rem; line-height: 1.3; margin: 2.2rem 0 0.4rem; padding-top: 0.4rem; border-top: 1px solid var(--line); }
+  h3 { font-size: 1.02rem; margin: 1.4rem 0 0.2rem; }
+  p, ul { margin: 0.6rem 0; }
+  ul { padding-left: 1.3rem; }
+  li { margin: 0.25rem 0; }
+  a { color: var(--accent); }
+  .meta { color: var(--muted); margin: 0; font-size: 0.95rem; }
+  .lang { margin: 0 0 1rem; font-size: 0.95rem; }
+  .note { background: var(--note); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; margin: 1rem 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<main>
+<p class="lang"><a href="https://kirade.github.io/steadily/ko/" hreflang="ko" lang="ko">한국어</a> | English</p>
+
+<h1>Steadily Support</h1>
+<p class="meta">Help for the Steadily iPhone app, by Kirade</p>
+
+<p>Steadily: Habit Tracker is an iPhone app for keeping small daily habits. You mark each day as <strong>Done</strong>, <strong>Swap</strong> or <strong>Rest</strong>, and a day without an entry is simply shown as &ldquo;No entry&rdquo;, with no mark against you. Instead of a counter that resets to zero, a <strong>consistency score</strong> shows how steadily you have kept a habit lately.</p>
+
+<div class="note">
+<strong>Need help?</strong> Write to <a href="mailto:kirade.apps+steadily@gmail.com">kirade.apps+steadily@gmail.com</a>. Please say which iPhone and iOS version you use and what happened. Do not include the names of your habits.
+</div>
+
+<h2>What Steadily does</h2>
+<ul>
+  <li><strong>Today.</strong> Add the habits you want to keep. For each one, tap <strong>Done</strong>, <strong>Swap</strong> (you did something similar instead) or <strong>Rest</strong> (you could not do it today, and that is fine). Tap the same button again to clear the entry.</li>
+  <li><strong>Month.</strong> A calm grid of the month with the count of Done, Swap and Rest days. Tap a past day to change it, for example to mark a few sick days as Rest afterwards.</li>
+  <li><strong>Widgets.</strong> A small widget for one habit and a medium widget for today&rsquo;s habits. You can mark a habit Done right from the widget.</li>
+  <li><strong>English and Korean.</strong> The app follows the language of your iPhone.</li>
+</ul>
+
+<h2>Send feedback</h2>
+<p>Open the Settings tab and tap <strong>Send Feedback</strong>. Your mail app opens with a message to the address above. Before you send it, the message contains the app version, your iOS version and your iPhone model, so that the developer can reproduce problems. It never contains your habits or your entries. You can edit or delete anything in the message before you send it, and nothing is sent unless you press Send. If no mail app is set up, the app shows the address so you can copy it.</p>
+
+<h2>Your data</h2>
+<ul>
+  <li>There is no account, no login and no server of the developer. Your habits and entries are stored on your iPhone, and the developer has no copy of them. With Steadily Plus you can also sync across devices through iCloud: your habits and entries are then kept in your own iCloud and synced between devices that use the same Apple Account. The developer cannot see them. Without Plus they stay on your iPhone only.</li>
+  <li>The names of your habits and anything else you type are not part of the anonymous usage statistics or of feedback mail. The statistics only say what kind of action happened, such as a day marked Rest.</li>
+  <li>Deleting the app deletes your habits and entries from your iPhone. If you sync across devices (Plus), the copy in your iCloud stays until you delete it. There is no export in this version.</li>
+</ul>
+<p>Full details are in the <a href="https://kirade.github.io/steadily/privacy/">Privacy Policy</a>.</p>
+
+<h2>Anonymous usage statistics</h2>
+<p>Steadily sends anonymous usage statistics so the developer can see which features are used. The names of your habits and anything you type are never included. To turn this off or on, open the Settings tab and use <strong>Send Anonymous Usage Statistics</strong>. In the EEA, the United Kingdom and Switzerland it is off until you turn it on. Details are in section 4 of the <a href="https://kirade.github.io/steadily/privacy/">Privacy Policy</a>.</p>
+
+<h2>Questions</h2>
+<h3>What happens on days when I do not record anything?</h3>
+<p>Nothing breaks. The day shows as <strong>No entry</strong> in a neutral colour, with no red mark, no warning and no counter that resets. Older empty days fade out of your consistency score over time, and after 60 days they no longer count.</p>
+<h3>What do Swap and Rest mean?</h3>
+<p><strong>Swap</strong> is for a day when you did something similar instead, for example a short walk instead of a run. It counts for most of a Done day. <strong>Rest</strong> is for a day when you could not do the habit and that is fine. Rest days are left out of the score, so they never lower it. You can change a day from No entry to Rest later and your score does not go down.</p>
+<h3>How is the consistency score calculated?</h3>
+<p>The score runs from 0 to 100 for each habit. It looks at the last 60 days, never before the habit&rsquo;s start day. Done counts as 1 and Swap as 0.75. Days with no entry count as 0, but recent days matter more: a day&rsquo;s weight halves every 10 days. Rest days are left out. Today is counted only once you record it, so your score does not drop in the morning. If there is nothing to count yet, the score shows a dash. In the app, tap &ldquo;How is the consistency score calculated?&rdquo; in the Month tab to read the same explanation.</p>
+<h3>How do I add a widget?</h3>
+<p>Long press the Home Screen, tap the + button and search for Steadily. Two sizes are available. The small widget shows one habit and its score. To choose the habit, long press the widget and tap Edit Widget. The medium widget shows today&rsquo;s habits, up to four. Tap a widget button to mark a habit Done, and tap it again to undo.</p>
+<h3>I marked a habit from the widget but the app does not show it.</h3>
+<p>The widgets and the app read the same records on your iPhone. Open the app and look again. If it still looks wrong, write to the address above and tell us your iOS version.</p>
+<h3>What is Steadily Plus?</h3>
+<p>Steadily is free to use with up to 3 active habits. <strong>Steadily Plus</strong> is a one-time purchase that gives you unlimited active habits and sync across devices (through iCloud). It is not a subscription and never renews. Habits and entries you have already made are never locked, whether or not you buy Plus. The price is shown by Apple, in your App Store currency, before you buy.</p>
+<h3>How do I restore my purchase?</h3>
+<p>Open the Settings tab and tap <strong>Restore Purchases</strong>. Plus is tied to your Apple Account, so it also comes back after you reinstall the app and on another iPhone that uses the same Apple Account.</p>
+<h3>How do I get a refund?</h3>
+<p>Refunds for App Store purchases are handled by Apple. Go to <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. The developer cannot issue refunds.</p>
+<h3>Where are my habits stored?</h3>
+<p>On your iPhone. There is no server of the developer. With Steadily Plus and sync across devices (through iCloud), your habits and entries are also stored in your own iCloud and synced between devices that use the same Apple Account; the developer cannot see them. Without Plus they stay on your iPhone only and are not synced. If you restore a new iPhone from an iPhone or computer backup, the backup can bring the data with it, as with most apps.</p>
+<h3>If I delete the app or switch to a new iPhone, are my habits gone?</h3>
+<p>With Plus and sync across devices, no: your habits and entries come back from iCloud when you install Steadily again on an iPhone that uses the same Apple Account with iCloud turned on. Your purchase also comes back with <strong>Restore Purchases</strong>. Without Plus, the data is stored only on your iPhone, so deleting the app deletes it; you can move it to a new iPhone with an iPhone or computer backup. To remove just one habit, edit the habit and delete it. To keep its records but hide it from Today and the widgets, archive it instead. You can restore it from the Archived list on the Today tab.</p>
+<h3>What happens if I sign out of iCloud?</h3>
+<p>If you sign out of iCloud or turn off iCloud for Steadily on a device that syncs with Steadily Plus, iOS may remove the synced habits and records from that device. They stay in your iCloud and come back when you sign in again with the same Apple Account. Records you add in the meantime are kept on that iPhone.</p>
+<p>If you sign in with a different iCloud account, sync pauses and the records on the device stay as they are.</p>
+<h3>Can I count a habit from an earlier day?</h3>
+<p>Yes. Each habit has a start day. Choose an earlier start day when you add or edit the habit, and then tap past days in the Month tab to fill them in.</p>
+<h3>How do I stop the usage statistics?</h3>
+<p>Open the Settings tab and turn off <strong>Send Anonymous Usage Statistics</strong>. Nothing is sent after that, and the app works the same.</p>
+
+<h2>Contact and policies</h2>
+<p>Steadily is operated by <strong>Kirade</strong>, an individual developer. Email: <a href="mailto:kirade.apps+steadily@gmail.com">kirade.apps+steadily@gmail.com</a></p>
+<p><a href="https://kirade.github.io/steadily/privacy/">Privacy Policy</a></p>
+</main>
+</body>
+</html>
