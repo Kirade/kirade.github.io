@@ -26,7 +26,7 @@
   .lang { margin: 0 0 1rem; font-size: 0.95rem; }
   .note { background: var(--note); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; margin: 1rem 0; }
   .tablewrap { overflow-x: auto; margin: 0.8rem 0; }
-  table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: 0.93rem; line-height: 1.5; }
+  table { border-collapse: collapse; width: 100%; min-width: 46rem; font-size: 0.93rem; line-height: 1.5; }
   th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
   th { background: var(--note); font-weight: 600; width: 9.5rem; }
   code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; }
@@ -36,19 +36,23 @@
 <main>
 <p class="lang"><a href="https://kirade.github.io/fitted/privacy/ko/" hreflang="ko" lang="ko">한국어</a> | English</p>
 
+
 <h1>Fitted Privacy Policy</h1>
-<p class="meta">Effective: October 18, 2026</p>
+<p class="meta">Effective: November 1, 2026</p>
 
 <p>Fitted is an iPhone app. You paste a job posting, and an AI interviews you and writes a resume tailored to that posting. This page explains what the app does with your information.</p>
 
 <div class="note">
 <strong>In short</strong>
 <ul>
-  <li>There are no accounts. Your profile, job postings, resumes and interviews are stored on your iPhone.</li>
+  <li>There is no sign-up or login. Your profile, job postings, resumes and interviews are stored on your iPhone.</li>
   <li>If you agree to the AI feature, the text needed for it is sent through Fitted's server to Anthropic (Claude). Your name and contact details are not sent.</li>
-  <li>Fitted's server does not store the content you send. It keeps technical logs for about 14 days.</li>
+  <li>Fitted's server does not store the content you send to the AI. It keeps technical logs for about 14 days.</li>
   <li>The app uses Apple's App Attest so the server can check that requests come from the genuine Fitted app. For this, the server keeps a small app-check record, without any of your content, until 30 days after the app last uses it. It is then deleted automatically.</li>
-  <li>The app shows ads from Google AdMob when you export a PDF. Google's ad software collects some device data, starting when you open the resume editor or Settings.</li>
+  <li>Purchases are made and paid for through Apple. Fitted never sees your payment details. So that you get what you bought and only one free resume, Fitted's server keeps records of your purchases and of your free resume, without any of your content, generally for 5 years after they last change (section 5). If your purchase account has a purchased resume you haven't used yet, that account's records (including that purchase) are kept until it is used or refunded, and then for 5 years.</li>
+  <li>If you answer a feedback question or send feedback, the server keeps it for about 1 year without your install ID or purchase IDs (section 6).</li>
+  <li>The app shows ads from Google AdMob when you export a PDF, except for resumes made with a purchase and while a 7-Day Pass is active. Google's ad software collects some device data, starting when you open the resume editor or Settings.</li>
+  <li>From Fitted 1.1, the app sends anonymous usage statistics to PostHog: which features are used and how often, never what you write. You can turn this off in Settings. In the EEA, the United Kingdom and Switzerland it is off unless you turn it on (section 8).</li>
   <li>You can turn AI off or delete all data in Settings at any time.</li>
 </ul>
 </div>
@@ -65,10 +69,10 @@
   <li>Resumes the app creates</li>
   <li>Interview conversations</li>
 </ul>
-<p>Fitted has no accounts and no cloud sync. A PDF you export goes only where you send it with the iOS share sheet. Deleting the app deletes this data. If you back up your iPhone (to iCloud or a computer), the backup can include this data, as with most apps.</p>
+<p>Fitted has no sign-up and no cloud sync. A PDF you export goes only where you send it with the iOS share sheet. Deleting the app deletes this data. If you back up your iPhone (to iCloud or a computer), the backup can include this data, as with most apps.</p>
 
 <h2>3. AI features</h2>
-<p>AI features run only after you agree on the consent screen. The consent screen names Anthropic as the AI provider. You can turn AI off in Settings.</p>
+<p>AI features run only after you tap Allow on the consent screen. Before you choose, the screen says that Anthropic is a third-party AI service, lists what is sent to it and what is never sent, and says that the developer may use Anthropic&rsquo;s Claude to summarise feedback (section 6). Nothing is sent to Anthropic until you allow it. You can turn AI off in Settings.</p>
 
 <h3>What is sent</h3>
 <p>When you use an AI feature, Fitted sends the following:</p>
@@ -83,7 +87,7 @@
 <h3>Where it goes</h3>
 <p>Your iPhone &rarr; Fitted's server (AWS Lambda, Seoul region, <code>ap-northeast-2</code>) &rarr; Anthropic API.</p>
 <ul>
-  <li><strong>Fitted's server</strong> builds the request and passes it on. It does not store the content of requests or responses.</li>
+  <li><strong>Fitted's server</strong> builds the request and passes it on. It does not store the content of requests or responses. When a resume is created, it keeps only a fingerprint of the job posting (section 5), not the posting itself.</li>
   <li><strong>Anthropic PBC</strong> (United States) processes the content to provide the AI features and returns the result. Fitted asks Anthropic to process requests in any available region, so processing can also take place outside the United States.</li>
 </ul>
 
@@ -99,17 +103,57 @@
 <a href="https://www.anthropic.com/legal/privacy">Anthropic's own Privacy Policy</a>.</p>
 
 <h2>4. Install ID and server records</h2>
-<p>When the app first starts, it creates a random ID (a UUID) for your installation. It is not tied to your name or your Apple ID. The app sends it with each AI request so the server can apply a daily usage limit. The server turns it into a hash and uses only the hash. A hash is not anonymous: it can still link requests from the same installation.</p>
-<p>The server keeps three kinds of records:</p>
+<p>When the app first starts, it creates a random ID (a UUID) for your installation. It is created at random, not from your name or your Apple Account. The app sends it with each request to Fitted's server (AI, purchase and feedback requests) so the server can apply daily usage limits and recognise what this installation may create (section 5). The server turns it into a hash and uses only the hash. A hash is not anonymous: it can still link requests from the same installation. From Fitted 1.1, when you start a resume or make or restore a purchase, the server also links this hash to Apple's ID for your copy of the app (<code>appTransactionId</code>, section 5).</p>
+<p>The server keeps these kinds of records:</p>
 <ul>
-  <li><strong>Technical logs</strong> (Amazon CloudWatch, kept for 14 days, then deleted automatically): which endpoint was called, result status, processing time, the model used, token counts, estimated cost, counts of resume lines removed or flagged by checks, the result of the app check and, when a key is registered, whether the app came from TestFlight or the App Store, and the hashed install ID. Logs never contain your answers, job postings, resume text or contact details. Fitted's own logs do not include your IP address.</li>
-  <li><strong>Daily limit counters</strong> (Amazon DynamoDB): the number of AI and app-check requests per hashed install ID (or in one shared counter for requests without an app check), and the total daily spend of the service. Each item expires two days after the end of that day (Korea time) and is then removed automatically. Deletion is not instant.</li>
-  <li><strong>App check records (App Attest)</strong> (Amazon DynamoDB): when the app first uses an AI feature (and again after Delete All Data, a reinstall, or if the server stops accepting the key), it asks iOS to create a key whose private part never leaves your iPhone. iOS then has the key certified by Apple's App Attest service. This contacts Apple once for each key; later checks happen on your iPhone without contacting Apple. Fitted sends Apple none of your content and not the install ID. Apple says the attestation that Fitted's server receives is anonymous and includes no hardware identifiers. The server then links the key to the hashed install ID. The server stores a hash of the key's identifier, the key's public key, a usage counter, the hashed install ID, the key's environment (production or development), and dates (created and expiry). It uses them to confirm that requests come from the genuine app, to enforce the daily limits and to prevent abuse. A record expires 30 days after the key was last used. The server no longer accepts it after that, and it is then deleted automatically, which can take a few days. Each one-time challenge is stored with the hashed install ID, deleted when used, and expires after 5 minutes if unused. These records contain no answers, job postings, resume text, contact details or IP address. If your device does not support App Attest, the app skips this step and no record is made.</li>
+  <li><strong>Technical logs</strong> (Amazon CloudWatch, kept for 14 days, then deleted automatically): which endpoint was called, result status, processing time, the model used, token counts, estimated cost, counts of resume lines removed or flagged by checks, counts of job requirements met, the result of the app check and, when a key is registered, whether the app came from TestFlight or the App Store, the app version, which daily limit applied, and the hashed install ID. For purchase-related requests, logs also record the product, the environment (live or test), the result, whether Apple's app record could be verified, which kind of resume allowance was used (free resume, purchased resume or 7-Day Pass) and short hashes of transaction IDs and resume tokens, never the IDs themselves. For a feedback answer, the log line records the endpoint, result status, processing time, the app version, the result of the app check and which question was answered; it has no answers, comments or hashed install ID (see section 6 for the limits of this). Logs never contain your interview answers, feedback answers or comments, job postings, resume text, contact details, or Apple's IDs in readable form. Fitted's own logs do not include your IP address.</li>
+  <li><strong>Daily limit counters</strong> (Amazon DynamoDB): the number of requests per hashed install ID for AI, app-check, purchase-check, feedback and other requests (or in one shared counter for requests without an app check), the number of AI requests per purchase account for paid use (counted under a hash of the account, section 5), and the total daily spend of the service. Each item expires two days after the end of that day (Korea time) and is then removed automatically. Deletion is not instant.</li>
+  <li><strong>App check records (App Attest)</strong> (Amazon DynamoDB): when the app first uses an AI feature or sends feedback (and again after Delete All Data, a reinstall, or if the server stops accepting the key), it asks iOS to create a key whose private part never leaves your iPhone. iOS then has the key certified by Apple's App Attest service. This contacts Apple once for each key; later checks happen on your iPhone without contacting Apple. Fitted sends Apple none of your content and not the install ID. Apple says the attestation that Fitted's server receives is anonymous and includes no hardware identifiers. The server then links the key to the hashed install ID. The server stores a hash of the key's identifier, the key's public key, a usage counter, the hashed install ID, the key's environment (production or development), and dates (created and expiry). It uses them to confirm that requests come from the genuine app, to enforce the daily limits and to prevent abuse. A record expires 30 days after the key was last used. The server no longer accepts it after that, and it is then deleted automatically, which can take a few days. Each one-time challenge is stored with the hashed install ID, deleted when used, and expires after 5 minutes if unused. These records contain no answers, job postings, resume text, contact details or IP address. If your device does not support App Attest, the app skips this step and no record is made.</li>
+  <li><strong>Purchase records</strong> and <strong>feedback</strong>: see sections 5 and 6.</li>
 </ul>
-<p>Deleting the app, or using Delete All Data, discards the install ID. The app creates a new one the next time it needs it. Delete All Data also makes the app forget its App Attest key, so the key is never used again (see section 6).</p>
+<p>Deleting the app, or using Delete All Data, discards the install ID. The app creates a new one the next time it needs it. Delete All Data also makes the app forget its App Attest key, so the key is never used again (see section 9).</p>
 
-<h2>5. Ads (Google AdMob)</h2>
-<p>Fitted shows an interstitial ad from <strong>Google AdMob</strong> before the share sheet when you export a PDF. Google's ad software (Google Mobile Ads SDK) starts when you open the resume editor or Settings, and it loads ads in advance. Ads load directly from your iPhone to Google. They do not pass through Fitted's server, and Fitted does not receive this data.</p>
+<h2>5. Purchases (Fitted 1.1 and later)</h2>
+<p>Your first resume is free. After that you can buy one more resume or a 7-Day Pass with Apple's In-App Purchase. <strong>Apple handles the payment.</strong> Fitted does not receive your name, your Apple Account email or your payment details.</p>
+<h3>What the server receives</h3>
+<ul>
+  <li>The app sends Apple's signed records to Fitted's server: when you start a new resume, the record of your copy of the app (AppTransaction); when you buy or restore purchases, and when the app starts and iOS reports a new or changed purchase (for example a refund), your purchase records (transactions) together with the AppTransaction. Purchase requests are separate from the AI consent: they are sent even when AI is turned off.</li>
+  <li>These records include an ID that Apple creates for this app and your Apple Account (<code>appTransactionId</code>). It does not show your name or email, but it is the same on every device where you use Fitted with the same Apple Account, so it is not anonymous.</li>
+  <li>Apple's servers also send Fitted's server a signed notice when you make a purchase, when a purchase is refunded and when a refund is reversed (App Store Server Notifications).</li>
+  <li>The server checks Apple's signatures itself; it does not contact Apple to do this. Apple's records also contain other details, such as the storefront and price. The server does not keep them.</li>
+</ul>
+<h3>What the server keeps (Amazon DynamoDB, Seoul region)</h3>
+<ul>
+  <li><strong>Purchases:</strong> transaction ID, product, purchase time, environment (live or test), refund or refund-reversal time, and which purchase account received it.</li>
+  <li><strong>Purchase account:</strong> one record per <code>appTransactionId</code> (live and test kept apart) with your purchases and whether they are used or refunded, when your free resume was used, each resume set aside or made with an allowance (the kind of allowance and when it was set aside and made), and how many pass resumes were made in each 24-hour period (kept until 2 days after that period ends). If neither your purchase nor Apple's app record carries an <code>appTransactionId</code>, the record is kept under the hashed install ID instead. The free-resume record is always also kept under the hashed install ID, so the same installation does not get a second free resume.</li>
+  <li><strong>Resume tokens:</strong> when Fitted starts writing a resume, the server creates a random token and stores a hash of it with the purchase account (and, for a free resume, the record under the hashed install ID), the kind of allowance, the product and a hash of the purchase used, times, the number of attempts and AI rewrites, their AI cost, and a fingerprint (SHA-256 hash) of the posting's company, title and requirements. The fingerprint makes sure a token is used only for the same posting. The posting itself is not stored.</li>
+  <li><strong>Usage per purchase:</strong> how many AI calls (resume attempts and rewrites) were made with each purchase and their AI cost, under a hash of the transaction ID.</li>
+  <li><strong>Installation link:</strong> the hashed install ID with the <code>appTransactionId</code> of this installation and up to three others seen in purchases made on it (with when each was last seen), so that your purchases apply to your requests.</li>
+  <li><strong>Notification check:</strong> the ID of each notice from Apple, so the same notice is not applied twice.</li>
+  <li><strong>Daily totals:</strong> counts per day with no identifiers, such as how many accounts (or installations) were shown the purchase screen, purchases and refunds by product, resumes made by kind of allowance, and AI cost by kind of allowance. To count each installation or account only once a day, the server keeps a marker with its hash for 2 days.</li>
+</ul>
+<p>The server uses these records to give you what you bought on all your devices, to give one free resume per Apple Account, to apply refunds, to prevent abuse, and to see, in total, how purchases are used.</p>
+<h3>How long</h3>
+<ul>
+  <li>Purchases, purchase accounts, tokens of resumes that were made, and usage per purchase: 5 years after the record last changed, so that purchases, refunds and the one-free-resume rule can be honoured and questions about a purchase can be answered. If your purchase account has a purchased resume you haven't used yet, that account's records (including that purchase) are kept until it is used or refunded, and then for 5 years. They are then deleted automatically.</li>
+  <li>Tokens of resumes that were not made: 48 hours. Installation links: 30 days after they were last updated. Notification checks: 30 days. Daily totals: 1 year. Daily markers: 2 days.</li>
+  <li>Deletion is not instant. The purchase-record table is also backed up continuously, so deleted or expired records can stay in backups for up to 35 days.</li>
+</ul>
+<p><strong>Delete All Data and deleting the app do not remove these server records</strong>, because your purchases belong to your Apple Account. You can usually get them back with Restore Purchases in Settings. The installation link of the old install ID is no longer used and expires after 30 days. The free-resume record kept under the old hashed install ID, and the token of that resume, stay like other purchase records (section 5).</p>
+
+<h2>6. Feedback (Fitted 1.1 and later)</h2>
+<p>Now and then the app asks one short question with tap-to-answer choices, for example how making a resume went, why you chose not to buy, what you thought of the price of your last 7-Day Pass, or how your application went. In Settings &rarr; Send Feedback you can vote for a feature and write a comment. All of this is optional. Feedback is available only while AI is turned on.</p>
+<ul>
+  <li><strong>What the server keeps:</strong> the question, your answer, your comment if you wrote one, the app version, the kind of allowance related to the question, when known (free, purchased resume or 7-Day Pass), whether the request passed the app check (yes or no only, section 4) and the date it was sent (the day only).</li>
+  <li><strong>What it does not attach:</strong> your install ID or its hash, Apple's IDs (<code>appTransactionId</code>, transaction IDs), and your resume or posting content.</li>
+  <li>A feedback request passes the same app check and daily limit as other requests (section 4). So the server counts that day&rsquo;s feedback requests per hashed install ID (the counter is deleted 2 to 3 days later), and each request that passes the app check extends the app-check record, which is kept with the hashed install ID, to 30 days from that moment (section 4). Opening Send Feedback loads the list of features to vote for; that request, and feedback requests the server turns away, are logged with the hashed install ID like other requests. The app-check record&rsquo;s expiry and the log lines show when requests arrived, and on a day with little feedback an item&rsquo;s date, app version and kind of allowance alone narrow it down, so a feedback answer could in principle be connected to an installation. <strong>Fitted does not make that connection.</strong></li>
+  <li>Please do not write personal information, such as your name, email or phone number, in comments.</li>
+  <li>Feedback is kept for about 1 year (until one year after the day it was sent) and is then deleted automatically. Deletion is not instant.</li>
+  <li>The developer reads feedback to improve Fitted and may use Anthropic's Claude to summarise it (section 10). The app says this on the consent screen and at the top of Send Feedback, before anything is sent. To do this, the developer exports the period's feedback (with each item's date, app version, kind of allowance and app check result), together with public App Store reviews, to a file on the developer's computer, which Claude reads. The summaries the developer keeps contain only the gist, without identifiers or quoted comments. The developer deletes the exported file once the summary is written, and the records that the summarising tool (Claude Code) keeps on the developer's computer are deleted automatically about 30 days later.</li>
+</ul>
+
+<h2>7. Ads (Google AdMob)</h2>
+<p>Fitted shows an interstitial ad from <strong>Google AdMob</strong> before the share sheet when you export a PDF. There is no ad when you export a resume made with a purchase, or while a 7-Day Pass is active. Google's ad software (Google Mobile Ads SDK) starts when you open the resume editor or Settings, and it loads ads in advance. Ads load directly from your iPhone to Google. They do not pass through Fitted's server, and Fitted does not receive this data.</p>
 <p>According to <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">Google's data disclosure for the Google Mobile Ads SDK</a>, the SDK collects:</p>
 <ul>
   <li>IP address (may be used to estimate the general location of a device)</li>
@@ -127,10 +171,28 @@
   <li>Fitted does not block any feature based on your ad choices. Delete All Data does not change them.</li>
 </ul>
 
-<h2>6. Turning AI off and deleting data</h2>
+<h2>8. Usage statistics (PostHog, Fitted 1.1 and later)</h2>
+<p>To understand how features are used and to improve the app, Fitted sends usage events to the analytics service of <strong>PostHog, Inc.</strong> Earlier versions do not send usage statistics. Events go directly from your iPhone to PostHog (PostHog Cloud, United States). They do not pass through Fitted's server.</p>
+<h3>What is sent</h3>
+<ul>
+  <li>What happened in the app and its kind: the app was opened; first-run setup was finished, and whether you allowed AI; a job posting was analysed, and whether that succeeded; a resume was created; a PDF was exported; a purchase sheet closed, with the kind of product (one more resume at the first-purchase price, one more resume, or a 7-Day Pass) and the result (purchased, waiting for approval, cancelled, still being confirmed, or failed).</li>
+  <li>App name and version, build type (App Store, TestFlight or development), iOS version, device model and type, language, time zone, screen size and network type (Wi-Fi or cellular).</li>
+  <li>A random identifier that the analytics software creates the first time the app sends statistics, so that return visits can be counted. It is deleted with the app and replaced on reinstall. It is separate from the install ID (section 4), and Fitted does not link it to the install ID, to Apple's IDs or to your purchases.</li>
+</ul>
+<h3>What is not sent</h3>
+<ul>
+  <li>Your profile, contact details, interview answers, job postings, resumes, feedback or anything you type; the install ID, Apple's IDs (appTransactionId, transaction IDs) and prices; the advertising identifier (IDFA) or other device identifiers; your location.</li>
+  <li>PostHog receives your IP address while the data is transmitted, but the project is set not to derive location from it and not to store it.</li>
+</ul>
+<h3>How to turn it off</h3>
+<p>Settings &rarr; <strong>Send Anonymous Usage Statistics</strong>. For users whose App Store country is in the EEA, the United Kingdom or Switzerland, the switch is off by default and nothing is sent until you turn it on. The app does not show a pop-up asking about this. Users elsewhere have it on by default. Until the app can tell your App Store country, it sends nothing. Usage after you turn the switch off is not sent. Events that were already waiting on your iPhone at that moment may still be sent while the app stays open, or later if you turn the switch back on. The app works the same whether the switch is on or off. This switch is separate from Use AI. Delete All Data does not change the switch or the random identifier, so a switch you turned off stays off (section 9).</p>
+<h3>Retention</h3>
+<p>PostHog keeps the events for 1 year, after which they can no longer be queried. The developer uses them only to improve the app. Because the events carry nothing that identifies you, Fitted cannot find yours to show or delete them (section 11).</p>
+
+<h2>9. Turning AI off and deleting data</h2>
 <ul>
   <li><strong>Turn AI off</strong> (Settings &rarr; Use AI): Fitted stops sending anything to the AI immediately and cancels requests that are in progress. Content that was already sent cannot be taken back. It stays with Anthropic under its retention policy (see section 3), and a request already in progress may already be with Anthropic. Your saved data stays on your iPhone.</li>
-  <li><strong>Delete All Data</strong> (Settings): deletes the profile, job postings, resumes, interviews, exported PDFs, AI consent and install ID from this iPhone. The app also forgets its App Attest key, so the key is never used again, and it creates a new key the next time you use an AI feature. The old app check record on the server is no longer used and expires as described in section 4. This cannot be undone. Fitted's server does not hold your content, and its logs are deleted after about 14 days.</li>
+  <li><strong>Delete All Data</strong> (Settings): deletes the profile, job postings, resumes, interviews, exported PDFs, AI consent and install ID from this iPhone. The app also forgets its App Attest key, so the key is never used again, and it creates a new key the next time you use an AI feature. The old app check record on the server is no longer used and expires as described in section 4. This cannot be undone. Fitted's server does not hold the content you sent to the AI, and its logs are deleted after about 14 days. Purchase records on the server stay (section 5): purchases stay with your Apple Account, and you can usually get them back with Restore Purchases. Feedback is stored without your install ID or purchase IDs, so Fitted cannot find yours to delete it early (section 6). Delete All Data does not change the Send Anonymous Usage Statistics switch or the analytics identifier (section 8).</li>
   <li><strong>Delete the app:</strong> this also deletes the data on your iPhone.</li>
 </ul>
 <p><strong>How long data is kept, and how it is deleted:</strong></p>
@@ -139,39 +201,41 @@
   <li>Server logs are deleted automatically after 14 days.</li>
   <li>Daily limit records expire as described in section 4 and are then deleted automatically.</li>
   <li>App check records expire 30 days after the key was last used, and unused one-time challenges after 5 minutes, as described in section 4. They are then deleted automatically. A record left behind by Delete All Data or by deleting the app expires the same way. Deletion is not instant.</li>
-  <li>Data sent to Anthropic or Google is kept as described in sections 3, 5 and 7.</li>
+  <li>Purchase records are kept as described in section 5 and are then deleted automatically. Backups of them last up to 35 days.</li>
+  <li>Feedback is deleted automatically about 1 year after it was sent (section 6).</li>
+  <li>Data sent to Anthropic, Google or PostHog is kept as described in sections 3, 7, 8 and 10.</li>
 </ul>
 
-<h2>7. Transfers of personal information outside Korea</h2>
-<p>Below are the items listed in Article 28-8(2) of Korea's Personal Information Protection Act for the two companies that receive information from the app. Apple's App Attest service (section 4) is part of iOS and is operated by Apple under Apple's own privacy policy. Fitted sends it none of your content and not the install ID.</p>
+<h2>10. Transfers of personal information outside Korea</h2>
+<p>Below are the items listed in Article 28-8(2) of Korea's Personal Information Protection Act for the three companies that receive information from the app or from Fitted. Apple's App Attest service (section 4) and In-App Purchase (section 5) are part of iOS and the App Store and are operated by Apple under Apple's own privacy policy. Fitted's server does not send Apple any information; it only receives Apple's signed records and notices.</p>
 <div class="tablewrap">
 <table>
-  <tr><th></th><th>Anthropic (AI feature)</th><th>Google (ads)</th></tr>
-  <tr><th>Recipient and contact</th><td>Anthropic PBC, 548 Market St, PMB 90375, San Francisco, CA 94104, USA. <a href="mailto:privacy@anthropic.com">privacy@anthropic.com</a></td><td>Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. <a href="https://support.google.com/policies?p=privpol_privts">Contact form</a>, <a href="mailto:googlekrsupport@google.com">googlekrsupport@google.com</a></td></tr>
-  <tr><th>Country</th><td>United States. Processing may also take place in other regions where Anthropic runs inference.</td><td>United States</td></tr>
-  <tr><th>Items</th><td>Interview answers, career facts, work history, education, skills, certifications, pasted job postings, resume lines you ask the AI to rewrite and your instructions (not your name or contact details)</td><td>IP address, crash logs, performance data, device ID (advertising identifier), advertising data, other product interactions</td></tr>
-  <tr><th>Purpose</th><td>To provide the AI interview and resume writing</td><td>To show ads, and for ad analytics and diagnostics</td></tr>
-  <tr><th>When and how</th><td>Each time you use an AI feature, over the network, through Fitted's server</td><td>When the app loads or shows an ad, over the network, directly from your iPhone</td></tr>
-  <tr><th>Retention</th><td>Deleted within 30 days; up to 2 years if flagged as a Usage Policy violation; longer if the law requires (Anthropic policy)</td><td>According to Google's policies (see links in section 5)</td></tr>
-  <tr><th>How to refuse, and effect</th><td>Do not agree, or turn AI off in Settings. AI features then stop working. Saved resumes can still be edited and exported.</td><td>Do not allow tracking, or change your choice in Privacy Choices or iPhone Settings. You may then see ads that are not personalised, limited ads, or no ads. Ads are part of the PDF export flow and are not an optional feature, so there is no setting that removes them.</td></tr>
+  <tr><th></th><th>Anthropic (AI feature)</th><th>Google (ads)</th><th>PostHog (usage statistics)</th></tr>
+  <tr><th>Recipient and contact</th><td>Anthropic PBC, 548 Market St, PMB 90375, San Francisco, CA 94104, USA. <a href="mailto:privacy@anthropic.com">privacy@anthropic.com</a></td><td>Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. <a href="https://support.google.com/policies?p=privpol_privts">Contact form</a>, <a href="mailto:googlekrsupport@google.com">googlekrsupport@google.com</a></td><td>PostHog, Inc., 2261 Market Street #4008, San Francisco, CA 94114, USA. <a href="mailto:privacy@posthog.com">privacy@posthog.com</a></td></tr>
+  <tr><th>Country</th><td>United States. Processing may also take place in other regions where Anthropic runs inference.</td><td>United States</td><td>United States (PostHog Cloud US, hosted on Amazon Web Services in Virginia)</td></tr>
+  <tr><th>Items</th><td>Interview answers, career facts, work history, education, skills, certifications, pasted job postings, resume lines you ask the AI to rewrite and your instructions (not your name or contact details). When the developer summarises feedback: feedback questions, answers and comments, with each item&rsquo;s date, app version, kind of allowance and app check result, and public App Store reviews (without install IDs or purchase IDs).</td><td>IP address, crash logs, performance data, device ID (advertising identifier), advertising data, other product interactions</td><td>Usage events (what happened in the app and its kind), app, device and iOS information, and a random identifier created by the analytics software (section 8)</td></tr>
+  <tr><th>Purpose</th><td>To provide the AI interview and resume writing; to summarise feedback</td><td>To show ads, and for ad analytics and diagnostics</td><td>Usage statistics and improving the app</td></tr>
+  <tr><th>When and how</th><td>Each time you use an AI feature, over the network, through Fitted's server. Feedback: when the developer summarises it (about every two weeks), over the network, from the developer's computer.</td><td>When the app loads or shows an ad, over the network, directly from your iPhone</td><td>While you use the app with the switch on, over the network, directly from your iPhone (sent in batches)</td></tr>
+  <tr><th>Retention</th><td>AI feature: deleted within 30 days; up to 2 years if flagged as a Usage Policy violation; longer if the law requires (Anthropic policy). Feedback summaries: processed under Anthropic&rsquo;s <a href="https://www.anthropic.com/legal/consumer-terms">Consumer Terms</a> (Claude Max plan), with the setting that lets Anthropic use the data to train its models turned off. Kept for 30 days; inputs and outputs flagged as a Usage Policy violation for up to 2 years; longer where the law requires, to resolve disputes, or to address Usage Policy violations (<a href="https://code.claude.com/docs/en/data-usage">Anthropic data usage</a>, <a href="https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data">Anthropic Privacy Center</a>).</td><td>According to Google's policies (see links in section 7)</td><td>1 year (PostHog free plan), after which events can no longer be queried</td></tr>
+  <tr><th>How to refuse, and effect</th><td>Do not agree, or turn AI off in Settings. AI features then stop working. Saved resumes can still be edited and exported. Feedback is optional; if you do not send it, nothing is summarised.</td><td>Do not allow tracking, or change your choice in Privacy Choices or iPhone Settings. You may then see ads that are not personalised, limited ads, or no ads. Ads are part of the PDF export flow and are not an optional feature, so there is no setting that removes them. Resumes made with a purchase, and exports during a 7-Day Pass, have no ads.</td><td>Turn off Send Anonymous Usage Statistics in Settings. Usage after that is not sent. In the EEA, the United Kingdom and Switzerland it is off until you turn it on. No app feature is blocked.</td></tr>
 </table>
 </div>
-<p><strong>Hosting:</strong> Fitted's server runs on Amazon Web Services in the Seoul region (Korea). AWS operates the servers on Fitted's behalf. This is not a transfer outside Korea.</p>
-<p>Fitted shares user data only with the providers named in this policy: Anthropic (AI), Google (ads) and Amazon Web Services (hosting). Under their published terms and policies, they protect user data at a level the same as or equal to what this policy describes.</p>
+<p><strong>Hosting:</strong> Fitted's server and its records run on Amazon Web Services in the Seoul region (Korea). AWS operates the servers on Fitted's behalf. This is not a transfer outside Korea.</p>
+<p>Fitted shares user data only with the providers named in this policy: Anthropic (AI), Google (ads), PostHog (usage statistics) and Amazon Web Services (hosting). Under their published terms and policies, they protect user data at a level the same as or equal to what this policy describes.</p>
 
-<h2>8. Your rights</h2>
-<p>You can view, edit and delete the data on your iPhone in the app at any time. Fitted's server does not keep your content and does not know who you are, so it has almost nothing to look up. If you still have a request or a complaint, write to <a href="mailto:kirade.apps+fitted@gmail.com">kirade.apps+fitted@gmail.com</a>. For data held by Anthropic or Google, you can also contact them using the links above.</p>
-<p>You can withdraw your consent to AI at any time (section 6). You can change ad choices at any time (section 5).</p>
+<h2>11. Your rights</h2>
+<p>You can view, edit and delete the data on your iPhone in the app at any time. Fitted's server does not keep the content you send to the AI and does not know your name. Its purchase records are kept under Apple's IDs and hashes, and feedback is kept without any ID that could identify you (each item&rsquo;s key is random), so Fitted cannot find them from your name or email. If you want to see, correct or delete purchase records, or have another request or a complaint, write to <a href="mailto:kirade.apps+fitted@gmail.com">kirade.apps+fitted@gmail.com</a>. We will tell you what information we need to find them. Deleting purchase records removes the purchases and the free-resume record from Fitted; backups are removed within 35 days. Usage statistics are also kept without anything that identifies you, so Fitted cannot find yours; turning the switch off stops sending them (section 8). For data held by Anthropic, Google or PostHog, you can also contact them using the links above.</p>
+<p>You can withdraw your consent to AI at any time (section 9). You can change ad choices at any time (section 7). You can turn usage statistics off at any time (section 8).</p>
 
-<h2>9. TestFlight</h2>
-<p>If you install a test build through Apple's TestFlight, the developer can see in App Store Connect the email address and name you were invited with, your sessions and crashes (depending on your iOS analytics settings), and any feedback you send, including screenshots. Apple provides this data. Fitted does not collect it itself.</p>
+<h2>12. TestFlight</h2>
+<p>If you install a test build through Apple's TestFlight, the developer can see in App Store Connect the email address and name you were invited with, your sessions and crashes (depending on your iOS analytics settings), and any feedback you send, including screenshots. Apple provides this data. Fitted does not collect it itself. Purchases in TestFlight use Apple's test environment and are not charged; the server keeps their records apart from live purchases (section 5).</p>
 
-<h2>10. Children</h2>
+<h2>13. Children</h2>
 <p>Fitted is not directed to children under 14 (under 13 in the United States). If you believe a child has used the app, contact <a href="mailto:kirade.apps+fitted@gmail.com">kirade.apps+fitted@gmail.com</a>.</p>
 
-<h2>11. Changes</h2>
+<h2>14. Changes</h2>
 <p>If this policy changes, the new version is posted here with a new effective date. If a change affects what is sent to the AI, the app asks for your consent again.</p>
-<p class="meta">Effective: October 18, 2026</p>
+<p class="meta">Effective: November 1, 2026</p>
 </main>
 </body>
 </html>
